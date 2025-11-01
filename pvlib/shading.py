@@ -198,10 +198,11 @@ def sky_diffuse_passias(masking_angle):
     Even when the sun is high in the sky, a row's view of the sky dome will
     be partially blocked by the row in front. This causes a reduction in the
     diffuse irradiance incident on the module. The reduction depends on the
-    masking angle, the elevation angle from a point on the shaded module to
-    the top of the shading row. In [1]_ the masking angle is calculated as
-    the average across the module height. SAM assumes the "worst-case" loss
-    where the masking angle is calculated for the bottom of the array [2]_.
+    masking angle, the surface tilt and the elevation angle from a point on
+    the shaded module to the top of the shading row. In [1]_ the masking
+    angle is calculated as the average across the module height. SAM assumes
+    the "worst-case" loss where the masking angle is calculated for the
+    bottom of the array [2]_.
 
     This function, as in [1]_, makes the assumption that sky diffuse
     irradiance is isotropic.
@@ -209,8 +210,8 @@ def sky_diffuse_passias(masking_angle):
     Parameters
     ----------
     masking_angle : numeric
-        The elevation angle below which diffuse irradiance is blocked
-        [degrees].
+        The sum of the surface tilt and the elevation angle below which
+        diffuse irradiance is blocked [degrees].
 
     Returns
     -------
